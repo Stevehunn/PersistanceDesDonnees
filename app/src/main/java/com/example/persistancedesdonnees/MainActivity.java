@@ -127,7 +127,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             if(!test){
                 try {
-
                     // Création d'un objet User permettant de sauvegarder les saisies du formulaire
                     User user = new User(usernameText,emailText,phoneText,passwordText);
 
@@ -139,7 +138,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     email.setText(null);
                     phone.setText(null);
                     password.setText(null);
-
                 }
                 catch (Exception e){
                     e.printStackTrace();
@@ -152,19 +150,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Log.e("Clique SHOW ACCOUNT :", "nous sommes dans le block de selection des utilisateurs");
             onCreateDialog(savedInstanceState).show();
         }
-
     }
 
     protected Dialog onCreateDialog(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.select_account);
 
-
         // List déroulante
         final Spinner spin = (Spinner) findViewById(R.id.spin);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, Users);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
         spin.setAdapter(adapter);
 
         final Button active = (Button) findViewById(R.id.selection);
@@ -194,7 +189,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     //List des utlisateurs
-    static final String[] Users = new String[]{"user 1", "user 2"};
+    static final String[] Users = new String[]{"user 1", "user 2","user 3", "user 4"};
 
     //Select Account
     public void Option(){
@@ -203,12 +198,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             final Spinner spin = (Spinner) findViewById(R.id.spin);
             final TextView text = (TextView)findViewById(R.id.information);
             final Button appel = (Button)findViewById(R.id.appel);
+
+            //Si l'on selectionne un utilisateur
             if ((spin!= null ) && spin.isEnabled()){
                 appel.setText("Appeler l'utilisateur");
                 text.setText("Vous pouvez appler l'utilisateur selectionné en appayant sur le button en dessus");
                 spin.setEnabled(false);
                 active.setText("Selectionner un autre utilisateur");
             }
+
+            //Si aucun utilisateur n'est sélectionné
             else{
                 spin.setEnabled(true);
                 active.setText("Selectionner un utilisateur");
@@ -216,6 +215,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
     }
+
 /*
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
