@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/mainStyle"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:text="@string/intro"
+        android:textColor="#FFFFFF"
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="127dp" />
+
+    <EditText
+        style = "@style/fieldStyle"
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/username"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="208dp" />
+
+    <EditText
+        style = "@style/fieldStyle"
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:hint="@string/email"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="263dp" />
+
+    <EditText
+        style = "@style/fieldStyle"
+        android:id="@+id/phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone"
+        android:hint="@string/phone"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="319dp" />
+
+    <EditText
+        style = "@style/fieldStyle"
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="@string/password"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="374dp"
+        />
+
+    <Button
+        android:id="@+id/buttonRegister"
+        style="@style/buttonStyle"
+        android:background="@drawable/rectanglebutton"
+        android:text="@string/button"
+        app:backgroundTint="@android:color/holo_red_light"
+        tools:layout_editor_absoluteX="159dp"
+        tools:layout_editor_absoluteY="500dp" />
+
+    <Button
+        android:id="@+id/buttonShowAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show accounts"
+        android:background="@drawable/rectanglebutton"
+        app:backgroundTint="@android:color/holo_orange_light"
+        style="@style/buttonStyle" />
+
+</LinearLayout>
